@@ -5,7 +5,7 @@ game 'gta5'
 name 'ESX Food Stands'
 description 'ESX-based Food Stands spread across San Andreas'
 author 'Lucanatorr'
-version '1.0.0'
+version '1.0'
 
 dependencies {
 	'es_extended',
