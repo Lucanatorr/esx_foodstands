@@ -1,4 +1,4 @@
-# esx_compolice
+# esx_foodstands
 
 ESX-based Food Stands spread out all across San Andreas
 
