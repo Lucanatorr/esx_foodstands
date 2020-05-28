@@ -2,6 +2,9 @@
 
 ESX-based Food Stands spread out all across San Andreas
 
+## Showcase Video
+
+https://streamable.com/6hlfuk
 
 ## How to use
 
