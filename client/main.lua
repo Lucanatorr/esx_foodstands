@@ -1,4 +1,5 @@
 ESX = nil
+local hour = 0
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -74,6 +75,7 @@ end)
 Citizen.CreateThread(function()
     while true do 
         Citizen.Wait(0)
+        hour = GetClockHours()
     
         local playerPed = PlayerPedId()
         local coords = GetEntityCoords(playerPed)
@@ -85,12 +87,14 @@ Citizen.CreateThread(function()
 
                 DrawMarker(Config.Marker.Type, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Config.Marker.Size.x, Config.Marker.Size.y, Config.Marker.Size.z, Config.Marker.Color.r, Config.Marker.Color.g, Config.Marker.Color.b, 100, false, true, 2, false, nil, nil, false)
 
-                if distance <= 2.0 then
+                if distance <= 2.0 and hour >= 6 and hour <= 22 then
                     ESX.ShowHelpNotification(_U('help_text'))
 
                     if IsControlJustReleased(0, 51) then
                         OpenShopMenu()
                     end
+                elseif distance <= 3.0 and hour < 6 or distance <= 3.0 and hour > 22 then
+                    ESX.ShowNotification(_U('come_back_later'), false, true, 70)
                 end
             end
         end
